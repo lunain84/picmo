@@ -26,7 +26,8 @@ function getEmojiRecord(emoji: Emoji): EmojiRecord {
     order: emoji.order,
     custom: false,
     hexcode: emoji.hexcode,
-    version: emoji.version
+    version: emoji.version,
+    group: emoji.group
   };
 }
 

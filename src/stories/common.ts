@@ -1,4 +1,4 @@
-import { TwemojiRenderer } from '../renderers/twemoji';
+import { TwemojiRenderer, TwemojiSpriteRenderer } from '../renderers/twemoji';
 import { NativeRenderer } from '../renderers/native';
 
 import { lightTheme, darkTheme, autoTheme } from '../themes';
@@ -51,17 +51,19 @@ export function getArgs(extraArgs): Meta {
       },
       renderer: {
         name: 'Emoji renderer',
-        options: ['native', 'twemoji-svg', 'twemoji-png'],
+        options: ['native', 'twemoji-svg', 'twemoji-sprite', 'twemoji-png'],
         mapping: {
           native: new NativeRenderer(),
           'twemoji-svg': new TwemojiRenderer('svg'),
-          'twemoji-png': new TwemojiRenderer('png')
+          'twemoji-png': new TwemojiRenderer('png'),
+          'twemoji-sprite': new TwemojiSpriteRenderer()
         },
         control: {
           type: 'select',
           labels: {
             native: 'Native',
             'twemoji-svg': 'Twemoji (SVG)',
+            'twemoji-sprite': 'Twemoji (SVG sprite sheet)',
             'twemoji-png': 'Twemoji (PNG)'
           },
           

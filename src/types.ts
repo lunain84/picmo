@@ -19,6 +19,7 @@ export type EmojiRecord = {
   hexcode?: string;
   data?: any;
   version?: number;
+  group?: number;
 }
 
 export type EmojiSelection = {
